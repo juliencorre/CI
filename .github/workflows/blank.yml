@@ -31,11 +31,14 @@ jobs:
       - run: npm run build
       
       # preparer la diffusion
-      - run: |
+      - name: push la distribution vers la branch production
+        run: |
           cd dist
           git init
           git add -A
           git commit -m 'deploy'
+          git config --global user.email "jcorre@gmail.com"
+          git config --global user.name "Julien Corre"
           git push -f https://github.com/juliencorre/CI.git master:production
           cd -
       
