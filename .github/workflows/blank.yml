@@ -36,17 +36,12 @@ jobs:
           cd dist
           pwd
           git status
-          git switch production
-          git status
           git config --global user.email "jcorre@gmail.com"
           git config --global user.name "Julien Corre"
           git init
           git add -A
           git commit -m 'deploy'
-
           git push -f https://github.com/juliencorre/CI.git master:production
-          cd -
-      
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
