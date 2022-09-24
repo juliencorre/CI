@@ -29,6 +29,16 @@ jobs:
           node-version: '16.x'
       - run: npm install
       - run: npm run build
+      
+      # preparer la diffusion
+      - run: |
+          cd dist
+          git init
+          git add -A
+          git commit -m 'deploy'
+          git push -f https://github.com/juliencorre/CI.git master:production
+          cd -
+      
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
