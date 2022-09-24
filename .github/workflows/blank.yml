@@ -38,6 +38,7 @@ jobs:
           git status
           git config --global user.email "jcorre@gmail.com"
           git config --global user.name "Julien Corre"
+          git config --global init.defaultBranch production
           git init
           git add -A
           git commit -m 'deploy'
@@ -52,4 +53,4 @@ jobs:
         run: |
           pwd
           echo Add other actions to build,
-          echo test, and deploy your project.
+          echo test, and deploy your project. 
