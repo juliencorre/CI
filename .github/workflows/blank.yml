@@ -42,7 +42,6 @@ jobs:
           git init
           git add -A
           git commit -m 'deploy'
-          git branch production
           git status
           git push -f https://github.com/juliencorre/CI.git production
 
