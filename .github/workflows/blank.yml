@@ -40,10 +40,10 @@ jobs:
           git config --global user.name "Julien Corre"
           git config --global init.defaultBranch production
           git init
-          git branch production
           git add -A
           git commit -m 'deploy'
-          ls
+          git branch production
+          git status
           git push -f https://github.com/juliencorre/CI.git production
 
       # Runs a single command using the runners shell
