@@ -42,7 +42,7 @@ jobs:
           git init
           git add -A
           git commit -m 'deploy'
-          git push -f https://github.com/juliencorre/CI.git master:production
+          git push -f https://github.com/juliencorre/CI.git origin:production
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
