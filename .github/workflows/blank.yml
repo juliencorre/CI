@@ -35,6 +35,9 @@ jobs:
         run: |
           cd dist
           pwd
+          git status
+          git switch production
+          git status
           git config --global user.email "jcorre@gmail.com"
           git config --global user.name "Julien Corre"
           git init
