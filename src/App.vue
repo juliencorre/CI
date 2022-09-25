@@ -24,6 +24,7 @@ import ClasseEval from "./components/ClasseEval.vue";
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="#">Evaluations</a>
         <a class="nav-link" href="#">Eleves</a>
+        <a class="nav-link" href="#">Compétences</a>
       </div>
     </div>
   </div>
@@ -32,14 +33,7 @@ import ClasseEval from "./components/ClasseEval.vue";
 
 <div class="container-fluid">
 
-  <div class="card m-4" style="width: auto;">
-  <div class="card-body">
-    <h5 class="card-title">Evaluation n°1</h5>
     <ClasseEval />
-    <a href="#" class="btn btn-primary">Enregistrer</a>
-  </div>
-</div>
-
 
 
 </div>
