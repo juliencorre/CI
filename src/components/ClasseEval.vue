@@ -25,12 +25,14 @@ function getLocationDetails() {
 
   axios({
     method: "GET",
-    "url": "http://localhost:5173/eval1.json"
+    //"url": "http://localhost:5173/eval1.json"
+    "url": "https://virtserver.swaggerhub.com/corre/evaluation/1.0.0/evaluations/123"
+
   }).then(result => {
 
-    console.log(result.data.evaluations);
+    console.log("Retour du service, :result.data.evaluations: "+result.data.evaluations);
     evaluation.evaluations = result.data.evaluations;
-    console.log(result.data.entetes);
+    console.log("Retour du service, :result.data.entetes: "+result.data.entetes);
     entetes.entetes = result.data.entetes;
 
   }, error => {

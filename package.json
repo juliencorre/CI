@@ -12,7 +12,9 @@
   "dependencies": {
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
-    "vue": "^3.2.38"
+    "chart.js": "^3.9.1",
+    "vue": "^3.2.38",
+    "vue-chartjs": "^4.1.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",

@@ -1,5 +1,27 @@
 <script setup lang="ts">
 import ClasseEval from "./components/ClasseEval.vue";
+import Resultats from "./components/Resultats.vue";
+import Eleves from "./components/Eleves.vue";
+
+import { ref, computed } from 'vue'
+
+const routes = {
+  '/': ClasseEval,
+  '/resultats': Resultats,
+  '/eleves': Eleves
+}
+
+
+const currentPath = ref(window.location.hash)
+
+window.addEventListener('hashchange', () => {
+  currentPath.value = window.location.hash
+})
+
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || '/'] || NotFound
+})
+
 </script>
 
 <style>
@@ -22,8 +44,9 @@ import ClasseEval from "./components/ClasseEval.vue";
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Evaluations</a>
-        <a class="nav-link" href="#">Eleves</a>
+        <a class="nav-link active" aria-current="page" href="#/">Evaluations</a>
+        <a class="nav-link"  href="#/resultats">Résultats</a>
+        <a class="nav-link" href="#/eleves">Eleves</a>
         <a class="nav-link" href="#">Compétences</a>
       </div>
     </div>
@@ -33,7 +56,10 @@ import ClasseEval from "./components/ClasseEval.vue";
 
 <div class="container-fluid">
 
-    <ClasseEval />
+    <!--ClasseEval /-->
+    <!--Resultats :height="50" /-->
+
+    <component :is="currentView" />
 
 
 </div>
